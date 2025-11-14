@@ -7,11 +7,9 @@ from src.dialogue_management import dialogue_manager
 from src.tts_manager import save_tts_to_file
 
 
+from src.utils.logger import get_logger
+logger = get_logger(__name__)
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler(ALL_CONFIG["PATH"]["log_file_global"])
-logger.addHandler(file_handler)
 
 async def send_dm_response_with_tts(client, websocket):
     try:
